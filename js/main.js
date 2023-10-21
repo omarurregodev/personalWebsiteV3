@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+
+  // MOVE SMOOTH TO A SECTION FROM NAVBAR
+  
   makeLinksSmooth();
 
   function makeLinksSmooth() { 
