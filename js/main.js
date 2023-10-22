@@ -11,35 +11,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
-
   // MOVE SMOOTH TO A SECTION FROM NAVBAR
-  
+
   makeLinksSmooth();
 
-  function makeLinksSmooth() { 
-    const navLinks = document.querySelectorAll("nav li a"); 
-  
-    for (let i = 0; i < 3; i++) {
-      // console.log(navLinks[i]);
-      navLinks[i].addEventListener("click", smoothScroll);
-    }
-  }
+  function makeLinksSmooth() {
+    const navLinks = document.querySelectorAll("nav ul a");
 
-  function smoothScroll(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("href");
-    const targetElement = document.querySelector(targetId);
-  
-    if (targetElement) { 
-      // targetElement.scrollIntoView({behavior: "smooth", block: "end"});
-      window.scrollTo({
-        behavior: 'smooth',
-        block: 'end',
-        top:
-        targetElement.offsetTop - 140
-      })
-    }
+    navLinks.forEach( item => {
+      console.log(item);
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (item.classList.contains('active')) {
+          item.classList.toggle('active');
+        }
+
+        const elementClicked = e.currentTarget;
+        const targetId = elementClicked.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          window.scrollTo({
+            behavior: "smooth",
+            block: "end",
+            top: targetElement.offsetTop - 140,
+          });
+        }
+      });
+    })
   }
- 
 });

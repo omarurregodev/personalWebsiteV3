@@ -166,83 +166,95 @@ p.body-4 {
         }
 
         &-btnGroup {
-            list-style: none;
+
             display: flex;
             flex-direction: row;
-            align-items: center;
             gap: 24px;
-
-            li.body-2 {
-
-                a {
-                    text-decoration: none;
-                    color: var(--gray-500, #6b7280);
-                    font-family: 'Inter', sans-serif;
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 24px;
-                    cursor: pointer;
-                    transition: 0.3s all ease-in-out;
+            
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 24px;
     
-                    &:hover {
-                        color: var(--gray-900, #111827);
+                li.body-2 {
+    
+                    a {
+                        text-decoration: none;
+                        color: var(--gray-500, #6b7280);
+                        font-family: 'Inter', sans-serif;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        cursor: pointer;
+                        transition: 0.3s all ease-in-out;
+    
+                        &.active {
+                            color: var(--gray-900, #111827);
+                        }
+        
+                        &:hover {
+                            color: var(--gray-900, #111827);
+                        }
                     }
                 }
             }
+        }
 
-            li.body-2:nth-child(4) {
-                color: var(--gray-100, #F3F4F6);
-                font-family: 'Inter', sans-serif;
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 24px;
+        span.divisor {
+            background: var(--gray-100, #F3F4F6);
+            width: 3px;
+            height: 40px;
+        }
+
+        button.btnDarkMode.body-2 {
+            color: var(--gray-500, #6b7280);
+            background: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            display: grid;
+            place-content: center;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            transition: 0.3s all ease-in-out;
+            border-style: none;
+
+            img {
+                width: 24px;
+                height: 24px;
             }
 
-            li.body-2:nth-child(5) {
-                color: var(--gray-500, #6b7280);
-                font-family: 'Inter', sans-serif;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 24px;
-                display: grid;
-                place-content: center;
-                width: 36px;
-                height: 36px;
-                cursor: pointer;
-                transition: 0.3s all ease-in-out;
-
-                img {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                &:hover {
-                    border-radius: 8px;
-                    background: var(--gray-100, #F3F4F6);
-                }
+            &:hover {
+                border-radius: 8px;
+                background: var(--gray-100, #F3F4F6);
             }
-            li.body-2:nth-child(6) {
-                a {
-                    text-decoration: none;
-                    color: var(--gray-50, #F9FAFB);
-                    font-family: 'Inter', sans-serif;
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: 24px;
-                    border-radius: 12px;
-                    background: var(--gray-900, #111827);
-                    padding: 6px 16px;
-                    transition: 0.3s all ease-in-out;
-                    
-                    &:hover {
-                        background: var(--gray-700, #374151);
-                    }
-                }
+        }
 
+        a.body-2 {
+            border-radius: 12px;
+            background: var(--gray-900, #111827);
+            padding: 6px 16px;
+            transition: 0.3s all ease-in-out;
+            border-style: none;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--gray-50, #F9FAFB);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 24px;
+            display: grid;
+            place-content: center;
+            
+            &:hover {
+                background: var(--gray-700, #374151);
             }
         }
     }

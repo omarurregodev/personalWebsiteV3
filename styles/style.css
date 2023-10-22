@@ -143,13 +143,18 @@ p.body-4 {
   transform: translateY(-50%);
 }
 .header .navigation__primary-btnGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.header .navigation__primary-btnGroup ul {
   list-style: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 24px;
 }
-.header .navigation__primary-btnGroup li.body-2 a {
+.header .navigation__primary-btnGroup ul li.body-2 a {
   text-decoration: none;
   color: var(--gray-500, #6b7280);
   font-family: "Inter", sans-serif;
@@ -160,19 +165,20 @@ p.body-4 {
   cursor: pointer;
   transition: 0.3s all ease-in-out;
 }
-.header .navigation__primary-btnGroup li.body-2 a:hover {
+.header .navigation__primary-btnGroup ul li.body-2 a.active {
   color: var(--gray-900, #111827);
 }
-.header .navigation__primary-btnGroup li.body-2:nth-child(4) {
-  color: var(--gray-100, #F3F4F6);
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+.header .navigation__primary-btnGroup ul li.body-2 a:hover {
+  color: var(--gray-900, #111827);
 }
-.header .navigation__primary-btnGroup li.body-2:nth-child(5) {
+.header .navigation__primary span.divisor {
+  background: var(--gray-100, #F3F4F6);
+  width: 3px;
+  height: 40px;
+}
+.header .navigation__primary button.btnDarkMode.body-2 {
   color: var(--gray-500, #6b7280);
+  background: none;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -184,16 +190,23 @@ p.body-4 {
   height: 36px;
   cursor: pointer;
   transition: 0.3s all ease-in-out;
+  border-style: none;
 }
-.header .navigation__primary-btnGroup li.body-2:nth-child(5) img {
+.header .navigation__primary button.btnDarkMode.body-2 img {
   width: 24px;
   height: 24px;
 }
-.header .navigation__primary-btnGroup li.body-2:nth-child(5):hover {
+.header .navigation__primary button.btnDarkMode.body-2:hover {
   border-radius: 8px;
   background: var(--gray-100, #F3F4F6);
 }
-.header .navigation__primary-btnGroup li.body-2:nth-child(6) a {
+.header .navigation__primary a.body-2 {
+  border-radius: 12px;
+  background: var(--gray-900, #111827);
+  padding: 6px 16px;
+  transition: 0.3s all ease-in-out;
+  border-style: none;
+  cursor: pointer;
   text-decoration: none;
   color: var(--gray-50, #F9FAFB);
   font-family: "Inter", sans-serif;
@@ -201,12 +214,10 @@ p.body-4 {
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  border-radius: 12px;
-  background: var(--gray-900, #111827);
-  padding: 6px 16px;
-  transition: 0.3s all ease-in-out;
+  display: grid;
+  place-content: center;
 }
-.header .navigation__primary-btnGroup li.body-2:nth-child(6) a:hover {
+.header .navigation__primary a.body-2:hover {
   background: var(--gray-700, #374151);
 }
 
