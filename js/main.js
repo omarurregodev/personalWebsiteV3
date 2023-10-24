@@ -1,13 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // FUNCTIONALITY FOR NAVBAR SCROLL STYLES
-  const headerTag = document.querySelector(".header");
-  window.addEventListener("scroll", () => {
-    headerTag.classList.add("scrolled");
+  const headerTag = document.querySelector('.header');
+  const navLinks = document.querySelectorAll('nav ul a');
+
+  window.addEventListener('scroll', () => {
+    headerTag.classList.add('scrolled');
   });
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     let scrollPosition = window.scrollY;
     if (scrollPosition === 0) {
-      headerTag.classList.remove("scrolled");
+      headerTag.classList.remove('scrolled');
     }
   });
 
@@ -16,24 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
   makeLinksSmooth();
 
   function makeLinksSmooth() {
-    const navLinks = document.querySelectorAll("nav ul a");
-
-    navLinks.forEach( item => {
-      console.log(item);
-      item.addEventListener("click", (e) => {
+    let elementClicked;
+    navLinks.forEach( item => {    
+      item.addEventListener('click', (e) => {
         e.preventDefault();
-        if (item.classList.contains('active')) {
-          item.classList.toggle('active');
+        if (elementClicked) {
+          elementClicked.classList.remove('active');
         }
-
-        const elementClicked = e.currentTarget;
-        const targetId = elementClicked.getAttribute("href");
+        elementClicked = e.currentTarget;
+        const targetId = elementClicked.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-
+        elementClicked.classList.add('active');
         if (targetElement) {
           window.scrollTo({
-            behavior: "smooth",
-            block: "end",
+            behavior: 'smooth',
+            block: 'end',
             top: targetElement.offsetTop - 140,
           });
         }
