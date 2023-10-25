@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // FUNCTIONALITY FOR NAVBAR SCROLL STYLES
   const headerTag = document.querySelector('.header');
   const navLinks = document.querySelectorAll('nav ul a');
+  let isClicked = false;
 
   window.addEventListener('scroll', () => {
     headerTag.classList.add('scrolled');
@@ -36,7 +37,62 @@ document.addEventListener('DOMContentLoaded', () => {
             top: targetElement.offsetTop - 140,
           });
         }
+        topLineCloseButton.classList.remove('animationOpenTop')
+        bottomLineCloseButton.classList.remove('animationOpenBottom')
+        menuMobile.classList.add('visuallyhidden')
+        menuMobileContainer.classList.remove('active')
+        isClicked = !isClicked;
       });
     })
   }
+
+  // BUTTON CLOSE MOBILE MENU
+
+  const navbarWidth = document.querySelector('nav').offsetWidth;
+  const menuDesktop = document.querySelector('.navigation__primary-btnGroup');
+  const menuMobileButton = document.querySelector('.navigation__primary-mobile-close');
+
+  if (navbarWidth < 768) {
+    menuDesktop.classList.add('visuallyhidden');
+    menuMobileButton.classList.remove('visuallyhidden');
+  } else {
+    menuDesktop.classList.remove('visuallyhidden');
+    menuMobileButton.classList.add('visuallyhidden');
+  }
+
+  window.addEventListener('resize', () => {
+    if (navbarWidth < 768) {
+      menuDesktop.classList.add('visuallyhidden');
+      menuMobileButton.classList.remove('visuallyhidden');
+    } else {
+      menuDesktop.classList.remove('visuallyhidden');
+      menuMobileButton.classList.add('visuallyhidden');
+    }
+  })
+
+
+  const menuMobile = document.querySelector('.navigation__primary-mobile');
+  const menuMobileContainer = document.querySelector('.navigation__primary-mobile-container');
+  const closeMenuButton = document.getElementById('closeMobileButton-js');
+  const topLineCloseButton = document.querySelector('.close-topLine');
+  const bottomLineCloseButton = document.querySelector('.close-bottomLine');
+
+
+
+  closeMenuButton.addEventListener('click', () => {
+    
+    if (isClicked) {
+        topLineCloseButton.classList.remove('animationOpenTop')
+        bottomLineCloseButton.classList.remove('animationOpenBottom')
+        menuMobile.classList.add('visuallyhidden')
+        menuMobile.classList.remove('active')
+    } else {
+      topLineCloseButton.classList.add('animationOpenTop')
+      bottomLineCloseButton.classList.add('animationOpenBottom')
+      menuMobile.classList.remove('visuallyhidden')
+      menuMobileContainer.classList.add('active')
+    }
+
+    isClicked = !isClicked;
+  })
 });

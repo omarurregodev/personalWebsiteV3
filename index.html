@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000">
+    <meta name="theme-color" content="#4285f4">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" type="image/x-icon" href="assets/svg/Logo_omar_blanco.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +21,34 @@
                 <ul>
                     <li class="body-2"><a href="#about" aria-label="link to about section">About</a></li>
                     <li class="body-2"><a href="#work" aria-label="link to work section">Work</a></li>
+                    <li class="body-2"><a href="#testimonials" aria-label="link to testimonials section">Testimonials</a></li>
                     <li class="body-2"><a href="#contact" aria-label="link to contact section">Contact</a></li>
                 </ul>
                 <span class="divisor"></span>
                 <button class="btnDarkMode body-2 visuallyhidden" id="modeBtn"><img src="assets/svg/darkModeIcon.svg" alt="darkmode icon illustration"></button>
                 <a class="body-2" href="/assets/doc/CV_10102023.pdf" target="_blank" aria-label="download the CV of omar urrego">Download CV</a>
+            </div>
+            <div class="navigation__primary-mobile visuallyhidden">
+                <div class="navigation__primary-mobile-container">
+                    <div class="navigation__primary-mobile-container-logo">
+                        <a href="https://www.omarurrego.com" aria-label="link to omarurrego.com"><img src="assets/svg/Logo_omar.svg" alt="omar urrego's logo"></a>
+                    </div>
+                    <div class="navigation__primary-mobile-container-btnGroup">
+                        <ul>
+                            <li class="body-2"><a href="#about" aria-label="link to about section">About</a></li>
+                            <li class="body-2"><a href="#work" aria-label="link to work section">Work</a></li>
+                            <li class="body-2"><a href="#testimonials" aria-label="link to testimonials section">Testimonials</a></li>
+                            <li class="body-2"><a href="#contact" aria-label="link to contact section">Contact</a></li>
+                        </ul>
+                        <span class="divisor"></span>
+                        <button class="btnDarkMode body-2 visuallyhidden" id="modeBtn"><img src="assets/svg/darkModeIcon.svg" alt="darkmode icon illustration"></button>
+                        <a class="body-2" href="/assets/doc/CV_10102023.pdf" target="_blank" aria-label="download the CV of omar urrego">Download CV</a>
+                    </div>
+                </div>
+            </div>
+            <div id="closeMobileButton-js" class="navigation__primary-mobile-close visuallyhidden">
+                <div class="close-topLine"></div>
+                <div class="close-bottomLine"></div>
             </div>
         </nav>
     </header>
@@ -219,7 +242,7 @@
             </div>
         </section>
 
-        <section class="testimonial">
+        <section id="testimonials" class="testimonial">
             <div class="testimonial__container">
                 <div class="testimonial__container-top">
                     <p class="body-3">Testimonials</p>
@@ -230,7 +253,7 @@
                 <div class="testimonial__container-testimonials">
                     <div class="testimonial__container-testimonials-item">
                         <div class="testimonial__container-testimonials-item-image">
-                            <img src="assets/svg/avatarIcon.svg" alt="avatar icon">
+                            <img src="assets/images/ingeorbeCEO.webp" alt="avatar icon">
                         </div>
                         <div class="testimonial__container-testimonials-item-textcontent">
                             <p class="body-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum debitis cum, provident modi veritatis omnis suscipit neque laborum fugit maiores odit rem sed beatae error quo nisi, placeat delectus porro?</p>
