@@ -50,28 +50,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const navbarWidth = document.querySelector('nav').offsetWidth;
   const menuDesktop = document.querySelector('.navigation__primary-btnGroup');
+  const menuMobile = document.querySelector('.navigation__primary-mobile');
   const menuMobileButton = document.querySelector('.navigation__primary-mobile-close');
+
 
   if (navbarWidth < 768) {
     menuDesktop.classList.add('visuallyhidden');
     menuMobileButton.classList.remove('visuallyhidden');
+    menuMobile.classList.remove('visuallyhidden');
   } else {
     menuDesktop.classList.remove('visuallyhidden');
     menuMobileButton.classList.add('visuallyhidden');
+    menuMobile.classList.add('visuallyhidden');
   }
 
   window.addEventListener('resize', () => {
     if (navbarWidth < 768) {
       menuDesktop.classList.add('visuallyhidden');
       menuMobileButton.classList.remove('visuallyhidden');
+      menuMobile.classList.remove('visuallyhidden');
     } else {
       menuDesktop.classList.remove('visuallyhidden');
       menuMobileButton.classList.add('visuallyhidden');
+      menuMobile.classList.add('visuallyhidden');
     }
   })
 
 
-  const menuMobile = document.querySelector('.navigation__primary-mobile');
   const menuMobileContainer = document.querySelector('.navigation__primary-mobile-container');
   const closeMenuButton = document.getElementById('closeMobileButton-js');
   const topLineCloseButton = document.querySelector('.close-topLine');
@@ -84,13 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isClicked) {
         topLineCloseButton.classList.remove('animationOpenTop')
         bottomLineCloseButton.classList.remove('animationOpenBottom')
-        menuMobile.classList.add('visuallyhidden')
-        menuMobile.classList.remove('active')
+        menuMobileContainer.classList.remove('active')
+        menuMobile.classList.remove('activeBckgd')
     } else {
       topLineCloseButton.classList.add('animationOpenTop')
       bottomLineCloseButton.classList.add('animationOpenBottom')
-      menuMobile.classList.remove('visuallyhidden')
       menuMobileContainer.classList.add('active')
+      menuMobile.classList.add('activeBckgd')
     }
 
     isClicked = !isClicked;
